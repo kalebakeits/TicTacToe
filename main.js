@@ -290,7 +290,6 @@ function pro(playingAs,wScore,dScore,lScore){
             if(state[i][j] !== "X" && state[i][j] !== "O"){
                 state[i][j] = playingAs; //play the move and test it
                 let score = minmax(state, 0, false, localTurn);
-                console.log("Score = ", score)
                 if (score > bestScore){
                     bestScore = score;
                     bestMove = `(${i},${j})`;

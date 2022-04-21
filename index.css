@@ -194,7 +194,7 @@ are the properties necessary to draw the grid
 
 .h1{
     width: var(--boardWidth);
-    top: calc(var(--boardWidth)/2 +var(--lineWidth));
+    top: calc(var(--boardWidth)/2);
     left: 0px;
 }
 .h2{
