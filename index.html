@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a class="button" id="mainSite" href="http://kalebakeitshokile.co.uk/index.html">Home</a>
+    <h1 id="mainHeading">Tic Tac Toe</h1>
+    <div class="mobile-column row">
+        <section id="display" onload="main.js">
+            <div id="board">
+                <div class="line" id="line"></div>
+            </div>
+        </section>
+        <div id="info" class="column mobile-row">
+
+            <div class="column">            
+                <h1 id="whoIsP1">Player 1 (X):</h1>
+                <p class="tab" id="P1Score">0</p>
+            </div>
+
+            <div class="column">
+                <h1 id="whoIsP2">Player 2 (O):</h1>
+                <p class="tab" id="P2Score">0</p>
+            </div>
+            
+            <div class="column" id="diffLvl">
+                <h1 class="aiInfo" id="aiDiff">Difficulty:</h1>
+                <p class="tab aiInfo" id="aiDiffLvl">Ai Difficulty</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="" id="controls">
+        <button onclick="toggleAi()" class="button" id="aiButton">Ai (On/Off)</button>
+        <button onclick="reset()" class="button">New Game</button>
+        <button onclick="changeDifficulty()" class="button" id="difficultyButton">Change<br>Difficulty</button>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+    <footer>
+        Created by Kaleba Keitshokile
+    </footer>
+</body>

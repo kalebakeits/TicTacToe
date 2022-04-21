@@ -1,0 +1,315 @@
+/*Variables to make editing easier
+Also make mobile management easier
+*/
+:root{
+    --lineWidth: 5px;
+    --squareWidth: 180px;
+    --crossOutThickness: 20px;
+    --boardWidth: 550px;
+}
+/*Background of entire page*/
+html{
+    background-color: rgb(255, 191, 53);
+}
+/*Center all content */
+body {
+    max-width: max-content;
+    max-height: max-content;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+}
+
+section {
+    max-width: fit-content;
+    margin: auto;
+}
+
+footer{
+
+    padding-top: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 150%;
+    font-family: 'Nunito', sans-serif;
+}
+
+#mainHeading{
+    font-size: 200%;
+}
+
+#controlsbody {
+    max-width: max-content;
+    max-height: max-content;
+    margin: auto;
+}
+.markSquare{
+    padding: auto;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    
+    width: var(--squareWidth);
+    height: var(--squareWidth);
+
+    font-family: 'Nunito', sans-serif;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+/*Circle drawing class*/
+.oDraw{
+    width: 65%;
+    height: 65%;
+    border: 15px solid rgb(255, 249, 164);
+    border-radius: 50%;
+}
+/* Cross drawing class*/
+.xDraw {
+    color: rgb(114, 114, 114);
+    font-size: 800%;
+}
+.xDraw {
+    margin: auto;
+    height: var(--squareWidth);
+    width: var(--squareWidth);
+    background: #00558a00;
+    border-radius: 5px;
+    position: relative;
+}
+.xDraw:after {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "\00D7";
+    font-size: 250px;
+    color: rgb(150, 150, 150);
+}
+
+#board{
+    position: relative;
+    box-sizing: border-box;
+}
+/*
+#row1, #row3 and #board .row div:nth-child(2)
+are the properties necessary to draw the grid
+*/
+#row1{
+    border-bottom: var(--lineWidth) solid rgb(202, 143, 17);
+}
+
+#row3{
+    border-top: var(--lineWidth) solid rgb(202, 143, 17);
+}
+#board .row div:nth-child(2){
+    border-left: var(--lineWidth) solid rgb(202, 143, 17);
+    border-right: var(--lineWidth) solid rgb(202, 143, 17);
+    
+}
+/*horizontal content wrapper*/
+.row{
+    display: flex;
+    flex-direction: row;
+}
+/*vertical content wrapper*/
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Default winning line properties*/
+.line{
+    border-top: var(--crossOutThickness) solid rgb(255, 255, 255);
+    position: absolute;
+    box-sizing: border-box;
+}
+/*
+.d1 - diagonal line top left to bottom right
+.d2 - diagonal line to right to bottom left
+*/
+.d1{
+    width: calc(1.414 * var(--boardWidth));
+    top: 0px;
+    left: 0px;
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+.d2{
+    width: calc(1.414 * var(--boardWidth));
+    top: 0px;
+    right: 0px;
+    transform: rotate(-45deg);
+    transform-origin: top right;
+}
+/*
+.v0 - vertical line column 1
+.v1 - vertical line column 2
+.v3 - vertical line column 3
+*/
+.v0{
+    width: var(--boardWidth);
+    top: 0;
+    left: calc(var(--squareWidth)/2 + var(--lineWidth));
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.v1{
+
+    width: var(--boardWidth);
+    top: 0;
+    left: calc(var(--boardWidth)/2 + var(--lineWidth)) ;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.v2{
+    width: var(--boardWidth);
+    top: 0;
+    left: calc(var(--boardWidth) - var(--squareWidth)/2 + var(--lineWidth));
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+/*
+.h0 - horizontal line row 1
+.h1 - horizontal line row 2
+.h3 - horizontal line row 3
+*/
+.h0{
+    width: var(--boardWidth);
+    top: calc((var(--squareWidth))/2);
+    left: 0px;
+}
+
+.h1{
+    width: var(--boardWidth);
+    top: calc(var(--boardWidth)/2 +var(--lineWidth));
+    left: 0px;
+}
+.h2{
+    width: var(--boardWidth);
+    top: calc(var(--boardWidth)/2 + var(--squareWidth));
+    right: 0px;
+}
+.button{
+    margin: 5px;
+    width: 150px;
+    height: 50px;
+    background-color: #ad8500;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#controls{
+    width: fit-content;
+    margin:auto;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+#info{
+    width: fit-content;
+    margin:auto;
+}
+/*Indent some text*/
+.tab { 
+    margin-left: 40px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 200%;
+
+ }
+
+#mainSite{
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 200%;
+    font-family: 'Nunito', sans-serif;
+
+}
+#info{
+    padding-left: 20px;
+}
+ @media only screen and (max-width: 1000px){
+    /*Variables to make editing easier*/
+    :root{
+        --lineWidth: 5px;
+        --squareWidth: 250px;
+        --crossOutThickness: 20px;
+        --boardWidth: 760px;
+    }
+
+    .markSquare{        
+        font-size: 150%;
+    }
+    .mobile-column{
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile-row{
+        display: flex;
+        flex-direction: row;
+    }
+    #info div{
+        text-align: center;
+    }
+    #info div h1{
+        margin: auto;
+        text-align: left;
+    }
+
+    #info div p{
+        margin: auto;
+        text-align: left;
+    }
+
+    .button{
+        margin: 10px;
+        width: 250px;
+        height: 100px;
+        font-size: 200%;
+    }
+    .xDraw:after {
+        font-size: 150%;
+    }
+
+    #info div{
+        margin:auto;
+        padding: 50px;
+        justify-content: space-around;
+    }
+    #info{
+        padding-left: auto;
+    }
+    .tab { 
+        margin-left: 0;
+        font-family: 'Nunito', sans-serif;
+        font-size: 200%;
+    
+     }
+
+     #mainHeading{
+        font-size: 400%;
+    }
+}
